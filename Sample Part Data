@@ -1,0 +1,35 @@
+--Created a sample set of Inventory parts with fake sales data only.
+
+CREATE Table PMM (id INTEGER PRIMARY KEY, name TEXT,rev text, price INTEGER, quantity INTEGER, location TEXT);
+
+INSERT INTO PMM VALUES(1, "31001288", "1", "$5.25", 80, "A1-3");
+INSERT INTO PMM VALUES(2, "31004307", "2", "$5.25", 10, "C2-1");
+INSERT INTO PMM VALUES(3, "31004306", "2", "$5.25", 100, "D3-2");
+INSERT INTO PMM VALUES(4, "31004305", "1", "$5.25", 150, "E1");
+INSERT INTO PMM VALUES(5, "31000174", "A", "$5.25", 125, "A1-3");
+INSERT INTO PMM VALUES(6, "200147074", "03", "$5.25", 75, "D2-3");
+INSERT INTO PMM VALUES(7, "200202664", "c", "$5.25", 100, "C3-3");
+INSERT INTO PMM VALUES(8, "200147052", "2", "$5.25", 168, "A1-3");
+INSERT INTO PMM VALUES(9, "I5645-00", "","$5.25", 113, "A4-2");
+INSERT INTO PMM VALUES(10, "200147428", "2", "$5.25", 100, "A3-3");
+INSERT INTO PMM VALUES(11, "173415", "", "$5.25", 185, "B1-4");
+INSERT INTO PMM VALUES(12, "I6185-06", "", "$5.25", 200, "B4-4");
+INSERT INTO PMM VALUES(13, "I6203-06", "b", "$5.25", 25, "C1-4");
+INSERT INTO PMM VALUES(14, "E2425-00", "d", "$5.25", 650, "A1-3");
+INSERT INTO PMM VALUES(15, "I6186-06", "c", "$5.25", 100, "B1-3");
+INSERT INTO PMM VALUES(16, "I5086-00", "a", "$5.25", 100, "A1-7");
+INSERT INTO PMM VALUES(17, "319886-001", "1", "$5.25", 100, "A1-5");
+
+
+-- Display the database ordered by price.
+SELECT * from PMM ORDER BY price;
+
+
+--What is the total sum of all parts on hand.
+SELECT SUM(quantity) from PMM;
+
+--what are the most 5 items on hand?
+SELECT name, price, quantity
+FROM PMM
+order by quantity desc
+limit 5; 
