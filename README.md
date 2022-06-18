@@ -1,2 +1,4 @@
-# SQL
-SQL Portfolio
+# Daniel Collins SQL Portfolio
+
+
+## Welcome to my SQL Portfolio! This code repository contains examples SQL I've written. Feel free to take a look and reach out via email if you have any questions: danocogreen@gmail.com
