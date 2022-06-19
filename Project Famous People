@@ -1,0 +1,56 @@
+/* Create table about the people and what they do here 
+List of People compiled from a dataset on kaggle.com*/
+
+
+CREATE TABLE billionares (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    nationality TEXT,
+    industry text);
+
+insert into billionares (fullname, nationality, industry) values("Jeff Bezos", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Elon Musk", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Bernard Arnault", "France", "Consumer");
+insert into billionares (fullname, nationality, industry) values("Bill Gates", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Mark Zuckerberg", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Warren Buffett", "United States", "Diversified");
+insert into billionares (fullname, nationality, industry) values("Larry Page", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Sergey Brin", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Larry Ellison", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Steve Ballmer", "United States", "Technology");
+insert into billionares (fullname, nationality, industry) values("Francoise Bettencourt Meyers", "France", "Consumer");
+insert into billionares (fullname, nationality, industry) values("Amancio Ortega", "Spain ", "Retail");
+insert into billionares (fullname, nationality, industry) values("Mukesh Ambani", "India", "Energy");
+insert into billionares (fullname, nationality, industry) values("Charles Koch", "United States", "Industrial");
+insert into billionares (fullname, nationality, industry) values("Julia Flesher Koch & Family", "United States", "Industrial");
+
+
+
+CREATE table wealth (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    billionare_id INTEGER,
+    net_worth TEXT,
+    source_wealth TEXT);
+    
+insert into wealth (billionare_id, net_worth, source_wealth) values("1", "$188B", "Amazon");
+insert into wealth (billionare_id, net_worth, source_wealth) values("2", "$170B", "Tesla");
+insert into wealth (billionare_id, net_worth, source_wealth) values("3", "$155B", "Lvmh");
+insert into wealth (billionare_id, net_worth, source_wealth) values("4", "$144B", "Microsoft");
+insert into wealth (billionare_id, net_worth, source_wealth) values("5", "$114B", "Facebook");
+insert into wealth (billionare_id, net_worth, source_wealth) values("6", "$108B", "Berkshire Hathaway");
+insert into wealth (billionare_id, net_worth, source_wealth) values("7", "$104B", "Google");
+insert into wealth (billionare_id, net_worth, source_wealth) values("8", "$101B", "Google");
+insert into wealth (billionare_id, net_worth, source_wealth) values("9", "$90.6B", "Oracle");
+insert into wealth (billionare_id, net_worth, source_wealth) values("10", "$89.1B", "Microsoft");
+insert into wealth (billionare_id, net_worth, source_wealth) values("11", "$83.9B", "L'Oreal");
+insert into wealth (billionare_id, net_worth, source_wealth) values("12", "$79.3B", "Inditex");
+insert into wealth (billionare_id, net_worth, source_wealth) values("13", "$74.1B", "Reliance Industries");
+insert into wealth (billionare_id, net_worth, source_wealth) values("14", "$64.3B", "Koch");
+insert into wealth (billionare_id, net_worth, source_wealth) values("15", "$64.3B", "Koch");
+
+
+/*Return total net worth for each billionare*/
+SELECT billionares.fullname, wealth.net_worth
+FROM billionares
+JOIN wealth
+ON billionares.id = wealth.billionare_id;
